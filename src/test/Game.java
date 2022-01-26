@@ -1,9 +1,8 @@
 package test;
 
-import java.awt.Event;
+
 
 import javax.swing.JFrame;
-import javax.swing.event.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.EventListener;
@@ -75,13 +74,12 @@ public class Game implements EventListener, KeyListener {
 		return false;
 	}
 
-	public void keyTyped(KeyEvent e) {
-
+	public void keyTyped(KeyEvent e) { //unused
 	}
 
-	public void keyPressed(KeyEvent e) {
+	public void keyPressed(KeyEvent e) { // handles what happens when the W,A,S, and D keys are pressed.
 		int keyCode = e.getKeyCode();
-		if (graphics.state == "RUNNING") {
+		if (graphics.state == "RUNNING") { // listen to these specific keys if the game is running
 			if (keyCode == KeyEvent.VK_W) {
 				player.up();
 			} else if (keyCode == KeyEvent.VK_S) {
@@ -91,15 +89,14 @@ public class Game implements EventListener, KeyListener {
 			} else {
 				player.right();
 			}
-		} else {
+		} else { //if the game isnt running, then pressing any key starts the game.  
 			this.start();
 		}
 	}
 
-	public void keyReleased(KeyEvent e) {
-
+	public void keyReleased(KeyEvent e) {//unused
 	}
-
+//----------GETTERS & SETTERS----------//
 	public Snake getPlayer() {
 		return player;
 	}

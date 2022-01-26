@@ -9,7 +9,19 @@ public class Food {
 	public Food(Snake player) {
 		this.random_spawn(player);
 	}
-
+	
+	public void random_spawn(Snake player) {
+		boolean onSnake = true;
+		while (onSnake) {
+			onSnake = false;
+			x = (int) (Math.random() * Game.width - 1); // generate new coordinates until they do not 
+			y = (int) (Math.random() * Game.height - 1); // lie on top of the snake
+			for (Rectangle r : player.getBody()) 
+				if (r.x == x && r.y == y) 
+					onSnake = true;
+		}
+	}
+	// ----------GETTERS & SETTERS----------//
 	public int getX() {
 		return x;
 	}
@@ -24,19 +36,5 @@ public class Food {
 
 	public void setY(int y) {
 		this.y = y;
-	}
-
-	public void random_spawn(Snake player) {
-		boolean onSnake = true;
-		while (onSnake) {
-			onSnake = false;
-			x = (int) (Math.random() * Game.width - 1); // generate new coordinates until they do not 
-			y = (int) (Math.random() * Game.height - 1); // lie on top of the snake
-			for (Rectangle r : player.getBody()) {
-				if (r.x == x && r.y == y) {
-					onSnake = true;
-				}
-			}
-		}
 	}
 }
