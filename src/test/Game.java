@@ -5,9 +5,8 @@ package test;
 import javax.swing.JFrame;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.EventListener;
 
-public class Game implements EventListener, KeyListener {
+public class Game implements KeyListener {
 
 	private Snake player;
 	private Food food;

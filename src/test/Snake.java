@@ -27,7 +27,7 @@ public class Snake {
 		temp.setLocation((w / 2 - 2) * d, (h / 2) * d);
 		body.add(temp);
 
-		move = "NOTHING";
+		move = "RIGHT";
 	}
 
 	public void move() {
